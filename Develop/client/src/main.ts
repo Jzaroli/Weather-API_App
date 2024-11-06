@@ -51,6 +51,26 @@ const fetchWeather = async (cityName: string) => {
   renderForecast(weatherData.slice(1));
 };
 
+// const fetchSearchHistory = async () => {
+//   try {
+//     const response = await fetch('/api/weather/history', {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//   });
+//   if (!response.ok) {
+//     console.error('Failed to fetch search history');
+//     return [];
+//   }
+//   const history = await response.json();
+//   return history;
+// } catch (err) {
+//   console.error('Error fetching search history', err);
+//   return [];
+//   }
+// };
+
 const fetchSearchHistory = async () => {
   const history = await fetch('/api/weather/history', {
     method: 'GET',
@@ -138,6 +158,24 @@ const renderForecastCard = (forecast: any) => {
     forecastContainer.append(col);
   }
 };
+
+// const renderSearchHistory = async (historyList: any[]) => {
+
+//   if (searchHistoryContainer) {
+//     searchHistoryContainer.innerHTML = '';
+
+//     if (!historyList.length) {
+//       searchHistoryContainer.innerHTML =
+//         '<p class="text-center">No Previous Search History</p>';
+//     }
+
+//     // * Start at end of history array and count down to show the most recent cities at the top.
+//     for (let i = historyList.length - 1; i >= 0; i--) {
+//       const historyItem = buildHistoryListItem(historyList[i]);
+//       searchHistoryContainer.append(historyItem);
+//     }
+//   }
+// };
 
 const renderSearchHistory = async (searchHistory: any) => {
   const historyList = await searchHistory.json();
