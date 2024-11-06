@@ -1,16 +1,18 @@
 # Weather-App
 
 ## Description
+This app looks up the weather data for any city across the globe. 
 
 ## Usage
-
-Here are a couple screenshots
 Screenshot 1:  
-![screenshot1](../images/screenshot1.jpg)  
-Screenshot 2:  
-![screenshot2](../images/screenshot2.jpg)
+![screenshot1](./images/screenshot1.jpg)  
+
+You can access the app here: , or using the repo, installing npm first, then running 'npm run build', then 'npm run start', then accessing app on http://localhost:3001/
 
 ## Technical Features
+This app uses TypesScript, OOP, asynchornous programming, the openweathermap.org API to pull a weather forecast for any city in the globe. Note, the city name is first converted to latitude and longitutude using an initial API call, before making a second API call that converts the lat and lon to the local weather data.  
+
+NOTE: There is partial code written in the client and server directories for a feature where the user can store their favorite cities. Time allowing, I will come back to this later and complete the delete city functionality as well.
 
 ## Credits & How to Contribute
 This was created by Johann Zaroli. Please contact me on GitHub at Jzaroli with any questions or requests.
