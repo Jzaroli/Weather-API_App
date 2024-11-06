@@ -104,7 +104,6 @@ class WeatherService {
 
   console.log(fiveDayForecast);
 
-  // const fiveDayForecast = [new Weather (this.city, date1, icon1, iconDescription1, tempF1, windSpeed1, humidity1), new Weather (this.city, date2, icon2, iconDescription2, tempF2, windSpeed2, humidity2), new Weather (this.city, date3, icon3, iconDescription3, tempF3, windSpeed3, humidity3), new Weather (this.city, date2, icon2, iconDescription2, tempF2, windSpeed2, humidity2), new Weather (this.city, date4, icon4, iconDescription4, tempF4, windSpeed4, humidity4),]
   const sixDayForecast = [currentWeather, ...fiveDayForecast];
   return sixDayForecast;
   }
