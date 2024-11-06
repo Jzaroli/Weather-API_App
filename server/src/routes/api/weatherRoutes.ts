@@ -12,7 +12,7 @@ router.post('/', async (req: Request, res: Response) => {
       return res.status(400).json({ msg: 'City name is required'});
     }
     const weatherData = await WeatherService.getWeatherForCity(cityName);
-  // Save city to search history
+  // THIS: Save city to search history
     // await HistoryService.addCity(cityName);
     console.log(`city ${cityName} added to history`)
     return res.json(weatherData);
@@ -24,14 +24,13 @@ router.post('/', async (req: Request, res: Response) => {
 });
 
 // GET search history
-// router.get('/api/weather/history', async (_req: Request, res: Response) => {
+// router.get('/', async (_req: Request, res: Response) => {
 //   try {
-//     const savedCities = await HistoryService.getCities();
-//     console.log("Fetched cities:", savedCities);
-//     res.json(savedCities);
-//   } catch (err) {
-//     console.log('Error in GET / route', err);
-//     res.status(500).json({error: 'Internal server error'});
+//     const cities = await HistoryService.getCities();
+//     res.status(200).json(cities);
+//   } catch (error) {
+//     console.error('Error in GET / route', error);
+//     res.status(500).json({ error: 'Internal server error' });
 //   }
 // });
 
