@@ -1,5 +1,5 @@
 import { Router, type Request, type Response } from 'express';
-// import HistoryService from '../../service/historyService.js';
+import HistoryService from '../../service/historyService.js';
 import WeatherService from '../../service/weatherService.js';
 const router = Router();
 
@@ -13,7 +13,7 @@ router.post('/', async (req: Request, res: Response) => {
     }
     const weatherData = await WeatherService.getWeatherForCity(cityName);
   // THIS: Save city to search history
-    // await HistoryService.addCity(cityName);
+    await HistoryService.addCity(cityName);
     console.log(`city ${cityName} added to history`)
     return res.json(weatherData);
   // Error handling
@@ -24,15 +24,15 @@ router.post('/', async (req: Request, res: Response) => {
 });
 
 // GET search history
-// router.get('/', async (_req: Request, res: Response) => {
-//   try {
-//     const cities = await HistoryService.getCities();
-//     res.status(200).json(cities);
-//   } catch (error) {
-//     console.error('Error in GET / route', error);
-//     res.status(500).json({ error: 'Internal server error' });
-//   }
-// });
+router.get('/history', async (_req: Request, res: Response) => {
+  try {
+    const cities = await HistoryService.getCities();
+    res.status(200).json(cities);
+  } catch (error) {
+    console.error('Error in GET / route', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 // DELETE city from search history
 // router.delete('/history/:id', async (req: Request, res: Response) => {
