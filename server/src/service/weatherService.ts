@@ -113,6 +113,7 @@ class WeatherService {
     this.city = city;
     const coordinates = await this.fetchAndDestructureLocationData(); //returns coordinates
     const weatherData = await this.fetchWeatherData(coordinates); // returns weatherData
+    console.log(weatherData);
     const currentWeather = this.parseCurrentWeather(weatherData);
     console.log(currentWeather);
     const sixDayForecast = this.buildForecastArray(currentWeather, weatherData) // assembles final array

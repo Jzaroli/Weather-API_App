@@ -1,7 +1,7 @@
 # Weather-App
 
 ## Description
-This app looks up the weather data for any city across the globe. You may access it here: https://weather-app-tx11.onrender.com 
+This app looks up the weather data for any city across the globe and returns a list of saved cities. You may access it here: https://weather-app-tx11.onrender.com 
 
 ## Usage
 Screenshot 1:  
@@ -12,8 +12,6 @@ You can access the app at the link shared above. Or, by using the repo, installi
 ## Technical Features
 This app uses TypesScript, OOP, asynchornous programming, the openweathermap.org API to pull a weather forecast for any city in the globe. API information: https://openweathermap.org/   
 The city name is first converted to latitude and longitutude using an initial API call, before making a second API call that converts the lat and lon to the local weather data.  
-
-NOTE: There is partial code written in the client and server directories for a feature where the user can store their favorite cities. Time allowing, I will come back to this later and complete the delete city functionality as well.
 
 ## Credits & How to Contribute
 This was created by Johann Zaroli. Please contact me on GitHub at Jzaroli with any questions or requests.
