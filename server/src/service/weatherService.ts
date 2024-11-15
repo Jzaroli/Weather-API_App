@@ -101,9 +101,7 @@ class WeatherService {
   }).map((f) => {
     return new Weather (this.city, f.dt_txt, f.weather[0].icon, f.weather[0].description, f.main.temp, f.wind.speed, f.main.humidity)
   })  
-
-  console.log(fiveDayForecast);
-
+  // console.log(fiveDayForecast);
   const sixDayForecast = [currentWeather, ...fiveDayForecast];
   return sixDayForecast;
   }
@@ -113,9 +111,9 @@ class WeatherService {
     this.city = city;
     const coordinates = await this.fetchAndDestructureLocationData(); //returns coordinates
     const weatherData = await this.fetchWeatherData(coordinates); // returns weatherData
-    console.log(weatherData);
+    // console.log(weatherData);
     const currentWeather = this.parseCurrentWeather(weatherData);
-    console.log(currentWeather);
+    // console.log(currentWeather);
     const sixDayForecast = this.buildForecastArray(currentWeather, weatherData) // assembles final array
     return sixDayForecast;
   }
