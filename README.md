@@ -7,7 +7,7 @@ This app looks up the weather data for any city across the globe and returns a l
 Screenshot 1:  
 ![screenshot1](./images/screenshot1.jpg)  
 
-You can access the app at the link shared above. Or, by using the repo, installing npm first, then running 'npm run build', then 'npm run start', then accessing the app on http://localhost:3001/
+You can access the app at the link shared above. Or, by using the repo, installing npm first, then running 'npm run build', then 'npm run start', then accessing the app locally.
 
 ## Technical Features
 This app uses TypesScript, OOP, asynchornous programming, and the openweathermap.org API to pull a weather forecast for any city in the globe. API information: https://openweathermap.org/   
